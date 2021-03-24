@@ -1,0 +1,194 @@
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateClients (20210324173001)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE "clients" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210324173001"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-24 17:30:43.444379"], ["updated_at", "2021-03-24 17:30:43.444379"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:33:50 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (411.9ms)
+Completed 500 Internal Server Error in 1302ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Usuários”):
+    2:  <hr/>
+    3:  <li>
+    4:  	<hr/>
+    5:  	<%= link_to “Cadastro de Usuários”, users_path %>
+    6:  </li>
+    7: </ul>
+    8: <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_40138360'
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:34:22 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (262.2ms)
+Completed 500 Internal Server Error in 822ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Usuários”):
+    2:  <hr/>
+    3:  <li>
+    4:  	<hr/>
+    5:  	<%= link_to “Cadastro de Usuários”, clients_path %>
+    6:  </li>
+    7: </ul>
+    8: <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_40392980'
+Started GET "/rails/info/routes" for 192.168.208.1 at 2021-03-24 17:34:37 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [10 times] (34.4ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (178.2ms)
+  Rendered /usr/local/bundle/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (233.9ms)
+Completed 200 OK in 261ms (Views: 253.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:34:57 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (248.6ms)
+Completed 500 Internal Server Error in 811ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Usuários”):
+    2:  <hr/>
+    3:  <li>
+    4:  	<hr/>
+    5:  	<%= link_to “Cadastro de Usuários”, clients_path %>
+    6:  </li>
+    7: </ul>
+    8: <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_40172060'
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:35:09 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (231.1ms)
+Completed 500 Internal Server Error in 672ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Usuários”):
+    2:  <hr/>
+    3:  <li>
+    4:  	<hr/>
+    5:  	<%= link_to “Cadastro de Usuários”, clients_path %>
+    6:  </li>
+    7: </ul>
+    8: <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_40525420'
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:35:43 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (343.4ms)
+Completed 500 Internal Server Error in 863ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Usuários”):
+    2:  <hr/>
+    3:  <li>
+    4:  	<hr/>
+    5:  	<%= link_to “Cadastro de Usuários” %>
+    6:  </li>
+    7: </ul>
+    8: <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_23301540'
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:35:52 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5830ms (Views: 5712.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:36:41 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (248.8ms)
+Completed 500 Internal Server Error in 765ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Clientes):
+    2:  <hr/>
+    3:  <li>
+    4:  <hr/>
+    5: <%= link_to “Cadastro de Clientes, clients_path %>
+    6:  </li>
+    7:  </ul>
+    8:   <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_70253754493320'
+Started GET "/rails/info/routes" for 192.168.208.1 at 2021-03-24 17:37:52 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/local/bundle/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/local/bundle/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [10 times] (15.5ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /usr/local/bundle/gems/railties-5.1.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:38:39 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (250.2ms)
+Completed 500 Internal Server Error in 632ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Clientes):
+    2:  <hr/>
+    3:  <li>
+    4:  <hr/>
+    5: <%= link_to “Cadastro de Clientes, clients_path %>
+    6:  </li>
+    7:  </ul>
+    8:   <p>Você está em ambiente de [<strong><%= Rails.env %></strong>]</p>
+  
+app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___3606809135515986582_70253755876600'
+Started GET "/" for 192.168.208.1 at 2021-03-24 17:40:06 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 871ms (Views: 738.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clients" for 192.168.208.1 at 2021-03-24 17:40:11 +0000
+Cannot render console from 192.168.208.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (1.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 681ms (Views: 373.9ms | ActiveRecord: 3.7ms)
+
+
